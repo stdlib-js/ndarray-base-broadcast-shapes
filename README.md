@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.1.0-deno/mod.js';
 ```
 
 #### broadcastShapes( shapes )
@@ -229,7 +229,7 @@ var sh = broadcastShapes( [ sh1, sh2 ] );
 
 ```javascript
 import lpad from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-left-pad@deno/mod.js';
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.1.0-deno/mod.js';
 
 var shapes;
 var out;
