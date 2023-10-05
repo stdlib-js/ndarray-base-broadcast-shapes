@@ -1,4 +1,4 @@
-/**
+/*
 * @license Apache-2.0
 *
 * Copyright (c) 2021 The Stdlib Authors.
@@ -16,9 +16,11 @@
 * limitations under the License.
 */
 
-'use strict';
+// TypeScript Version: 4.1
 
-// MAIN //
+/// <reference types="https://cdn.jsdelivr.net/gh/stdlib-js/types@esm/index.d.ts"/>
+
+import { ArrayLike } from '@stdlib/types/array';
 
 /**
 * Broadcasts array shapes to a single shape.
@@ -32,8 +34,8 @@
 *
 * -   The function returns `null` if provided incompatible shapes (i.e., shapes which cannot be broadcast with one another).
 *
-* @param {Array<NonNegativeIntegerArray>} shapes - array of shape arrays
-* @returns {(NonNegativeIntegerArray|null)} broadcast shape (or `null`)
+* @param shapes - array shapes
+* @returns broadcast shape
 *
 * @example
 * var shapes = [
@@ -128,15 +130,6 @@
 *
 * @example
 * var shapes = [
-*     [ 8, 0, 1, 6, 1 ],
-*     [ 8, 8, 1, 6, 1 ]
-* ];
-*
-* var out = broadcastShapes( shapes );
-* // returns null
-*
-* @example
-* var shapes = [
 *     []
 * ];
 *
@@ -176,81 +169,9 @@
 * var out = broadcastShapes( shapes );
 * // returns [ 3, 2, 1 ]
 */
-function broadcastShapes( shapes ) {
-	var ndims;
-	var out;
-	var dim;
-	var sh;
-	var n1;
-	var n2;
-	var d;
-	var M;
-	var N;
-	var i;
-	var j;
-
-	M = shapes.length;
-	out = [];
-	if ( M === 0 ) {
-		return out;
-	}
-	sh = shapes[ 0 ];
-	N = sh.length;
-
-	// If provided a single input shape array, then the broadcast shape is input shape...
-	if ( M === 1 ) {
-		// Need to manually copy to output shape, as shapes could be array-like objects...
-		for ( i = 0; i < N; i++ ) {
-			out.push( sh[ i ] );
-		}
-		return out;
-	}
-	// Determine the maximum dimensionality...
-	ndims = [ N ];
-	for ( i = 1; i < M; i++ ) {
-		ndims.push( shapes[ i ].length );
-		if ( ndims[ i ] > N ) {
-			N = ndims[ i ];
-		}
-	}
-	// Initialize the output array...
-	for ( i = 0; i < N; i++ ) {
-		out.push( 0 );
-	}
-	// Compute the broadcast shape...
-	i = N - 1;
-	while ( i >= 0 ) {
-		n1 = ndims[ 0 ] - N + i;
-		if ( n1 >= 0 ) {
-			dim = sh[ n1 ];
-		} else {
-			dim = 1;
-		}
-		for ( j = 1; j < M; j++ ) {
-			n2 = ndims[ j ] - N + i;
-			if ( n2 >= 0 ) {
-				d = shapes[ j ][ n2 ];
-			} else {
-				d = 1;
-			}
-			if ( dim === 1 ) {
-				dim = d;
-				continue;
-			}
-			if ( d === 1 || dim === d ) {
-				// When either `d` is `1` or `d` equals the current output shape dimension, the current output shape dimension remains the same...
-				continue;
-			}
-			// The current shape cannot be broadcast against one of the other shapes...
-			return null;
-		}
-		out[ i ] = dim;
-		i -= 1;
-	}
-	return out;
-}
+declare function broadcastShapes( shapes: ArrayLike<ArrayLike<number>> ): ArrayLike<number>; // tslint:disable-line:max-line-length
 
 
 // EXPORTS //
 
-module.exports = broadcastShapes;
+export = broadcastShapes;
