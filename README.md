@@ -54,6 +54,11 @@ limitations under the License.
 To use in Observable,
 
 ```javascript
+broadcastShapes = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@umd/browser.js' )
+```
+The previous example will load the latest bundled code from the umd branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tags). For example,
+
+```javascript
 broadcastShapes = require( 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.0-umd/browser.js' )
 ```
 
@@ -66,7 +71,7 @@ var broadcastShapes = require( 'path/to/vendor/umd/ndarray-base-broadcast-shapes
 To include the bundle in a webpage,
 
 ```html
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.0-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@umd/browser.js"></script>
 ```
 
 If no recognized module system is present, access bundle contents via the global scope:
@@ -256,7 +261,7 @@ var sh = broadcastShapes( [ sh1, sh2 ] );
 <html lang="en">
 <body>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/string-left-pad@umd/browser.js"></script>
-<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.0-umd/browser.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@umd/browser.js"></script>
 <script type="text/javascript">
 (function () {
 
