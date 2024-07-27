@@ -52,7 +52,7 @@ limitations under the License.
 ## Usage
 
 ```javascript
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@esm/index.mjs';
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.2-esm/index.mjs';
 ```
 
 #### broadcastShapes( shapes )
@@ -234,7 +234,7 @@ var sh = broadcastShapes( [ sh1, sh2 ] );
 <script type="module">
 
 import lpad from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-left-pad@esm/index.mjs';
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@esm/index.mjs';
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.2-esm/index.mjs';
 
 var shapes;
 var out;
