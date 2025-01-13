@@ -45,14 +45,32 @@ limitations under the License.
 
 <!-- Package usage documentation. -->
 
+<section class="installation">
 
+## Installation
+
+```bash
+npm install @stdlib/ndarray-base-broadcast-shapes
+```
+
+Alternatively,
+
+-   To load the package in a website via a `script` tag without installation and bundlers, use the [ES Module][es-module] available on the [`esm`][esm-url] branch (see [README][esm-readme]).
+-   If you are using Deno, visit the [`deno`][deno-url] branch (see [README][deno-readme] for usage intructions).
+-   For use in Observable, or in browser/node environments, use the [Universal Module Definition (UMD)][umd] build available on the [`umd`][umd-url] branch (see [README][umd-readme]).
+
+The [branches.md][branches-url] file summarizes the available branches and displays a diagram illustrating their relationships.
+
+To view installation and usage instructions specific to each branch build, be sure to explicitly navigate to the respective README files on each branch, as linked to above.
+
+</section>
 
 <section class="usage">
 
 ## Usage
 
 ```javascript
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
+var broadcastShapes = require( '@stdlib/ndarray-base-broadcast-shapes' );
 ```
 
 #### broadcastShapes( shapes )
@@ -228,8 +246,8 @@ var sh = broadcastShapes( [ sh1, sh2 ] );
 <!-- eslint no-undef: "error" -->
 
 ```javascript
-import lpad from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-left-pad@deno/mod.js';
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
+var lpad = require( '@stdlib/string-left-pad' );
+var broadcastShapes = require( '@stdlib/ndarray-base-broadcast-shapes' );
 
 var shapes;
 var out;
@@ -270,7 +288,131 @@ for ( i = 0; i < shapes.length; i++ ) {
 
 <!-- C interface documentation. -->
 
+* * *
 
+<section class="c">
+
+## C APIs
+
+<!-- Section to include introductory text. Make sure to keep an empty line after the intro `section` element and another before the `/section` close. -->
+
+<section class="intro">
+
+</section>
+
+<!-- /.intro -->
+
+<!-- C usage documentation. -->
+
+<section class="usage">
+
+### Usage
+
+```c
+#include "stdlib/ndarray/base/broadcast_shapes.h"
+```
+
+#### stdlib_ndarray_broadcast_shapes( M, \*\*shapes, \*ndims, \*out )
+
+Broadcasts array shapes to a single shape.
+
+```c
+#include "stdlib/ndarray/base/broadcast_shapes.h"
+#include <stdint.h>
+
+int64_t N1 = 4;
+int64_t sh1[] = { 8, 1, 6, 1 };
+
+int64_t N2 = 3;
+int64_t sh2[] = { 7, 1, 5 };
+
+int64_t ndims[] = { N1, N2 };
+int64_t *shapes[] = { sh1, sh2 };
+
+int64_t out[] = { 0, 0, 0, 0 };
+int8_t status = stdlib_ndarray_broadcast_shapes( 2, shapes, ndims, out );
+if ( status != 0 ) {
+    // Handle error...
+}
+```
+
+The function accepts the following arguments:
+
+-   **M**: `[in] int64_t` number of shape arrays.
+-   **shapes**: `[in] int64_t**` array of shape arrays (dimensions).
+-   **ndims**: `[in] int64_t*` number of dimensions for each respective shape array.
+-   **out**: `[out] int64_t*` output shape array.
+
+```c
+int8_t stdlib_ndarray_broadcast_shapes( const int64_t M, const int64_t *shapes[], const int64_t ndims[], int64_t *out );
+```
+
+If successful, the function returns `0`; otherwise, the function returns `-1` (e.g., due to incompatible shapes).
+
+</section>
+
+<!-- /.usage -->
+
+<!-- C API usage notes. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
+
+<section class="notes">
+
+### Notes
+
+-   Even if the function is unsuccessful, the function may still overwrite elements in the output array before returning. In other words, do not assume that providing incompatible shapes is a no-op with regard to the output array.
+
+</section>
+
+<!-- /.notes -->
+
+<!-- C API usage examples. -->
+
+<section class="examples">
+
+### Examples
+
+```c
+#include "stdlib/ndarray/base/broadcast_shapes.h"
+#include <stdint.h>
+#include <stdio.h>
+#include <inttypes.h>
+
+int main( void ) {
+    int64_t N1 = 4;
+    int64_t sh1[] = { 8, 1, 6, 1 };
+
+    int64_t N2 = 3;
+    int64_t sh2[] = { 7, 1, 5 };
+
+    int64_t ndims[] = { N1, N2 };
+    int64_t *shapes[] = { sh1, sh2 };
+
+    int64_t out[] = { 0, 0, 0, 0 };
+    int8_t status = stdlib_ndarray_broadcast_shapes( 2, shapes, ndims, out );
+    if ( status != 0 ) {
+        printf( "incompatible shapes\n" );
+        return 1;
+    }
+    int64_t i;
+    printf( "shape = ( " );
+    for ( i = 0; i < N1; i++ ) {
+        printf( "%"PRId64"", out[ i ] );
+        if ( i < N1-1 ) {
+            printf( ", " );
+        }
+    }
+    printf( " )\n" );
+    return 0;
+}
+```
+
+</section>
+
+<!-- /.examples -->
+
+</section>
+
+<!-- /.c -->
 
 <!-- Section to include cited references. If references are included, add a horizontal rule *before* the section. Make sure to keep an empty line after the `section` element and another before the `/section` close. -->
 
@@ -297,7 +439,7 @@ for ( i = 0; i < shapes.length; i++ ) {
 
 ## Notice
 
-This package is part of [stdlib][stdlib], a standard library with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
+This package is part of [stdlib][stdlib], a standard library for JavaScript and Node.js, with an emphasis on numerical and scientific computing. The library provides a collection of robust, high performance libraries for mathematics, statistics, streams, utilities, and more.
 
 For more information on the project, filing bug reports and feature requests, and guidance on how to develop [stdlib][stdlib], see the main project [repository][stdlib].
 
@@ -314,7 +456,7 @@ See [LICENSE][stdlib-license].
 
 ## Copyright
 
-Copyright &copy; 2016-2024. The Stdlib [Authors][stdlib-authors].
+Copyright &copy; 2016-2025. The Stdlib [Authors][stdlib-authors].
 
 </section>
 
