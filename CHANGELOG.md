@@ -4,7 +4,19 @@
 
 <section class="release" id="unreleased">
 
-## Unreleased (2025-03-17)
+## Unreleased (2025-05-30)
+
+<section class="issues">
+
+### Closed Issues
+
+This release closes the following issue:
+
+[#7114](https://github.com/stdlib-js/stdlib/issues/7114)
+
+</section>
+
+<!-- /.issues -->
 
 <section class="commits">
 
@@ -12,6 +24,7 @@
 
 <details>
 
+-   [`385ab25`](https://github.com/stdlib-js/stdlib/commit/385ab256cd1a74c103ed333727946183f9bf723c) - **chore:** fix EditorConfig lint errors [(#7118)](https://github.com/stdlib-js/stdlib/pull/7118) _(by Tushar Bhardwaj, Athan Reines, stdlib-bot)_
 -   [`a80835b`](https://github.com/stdlib-js/stdlib/commit/a80835b8f9959a15751adfce5572bb2b29cfeeed) - **refactor:** declare parameters and pointer as const _(by Philipp Burckhardt)_
 -   [`99cca3d`](https://github.com/stdlib-js/stdlib/commit/99cca3dc8a07ef39b9821468b8a0f7a4d6cacf72) - **chore:** declare parameter as const array _(by Philipp Burckhardt)_
 -   [`2777e4b`](https://github.com/stdlib-js/stdlib/commit/2777e4be161869d09406e3b17947d24c64b47af2) - **bench:** resolve lint errors in benchmarks _(by Athan Reines)_
@@ -26,10 +39,11 @@
 
 ### Contributors
 
-A total of 2 people contributed to this release. Thank you to the following contributors:
+A total of 3 people contributed to this release. Thank you to the following contributors:
 
 -   Athan Reines
 -   Philipp Burckhardt
+-   Tushar Bhardwaj
 
 </section>
 
