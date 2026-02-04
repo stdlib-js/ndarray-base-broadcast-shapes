@@ -52,6 +52,11 @@ limitations under the License.
 ## Usage
 
 ```javascript
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
+```
+The previous example will load the latest bundled code from the deno branch. Alternatively, you may load a specific version by loading the file from one of the [tagged bundles](https://github.com/stdlib-js/ndarray-base-broadcast-shapes/tags). For example,
+
+```javascript
 import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.3-deno/mod.js';
 ```
 
@@ -229,7 +234,7 @@ var sh = broadcastShapes( [ sh1, sh2 ] );
 
 ```javascript
 import lpad from 'https://cdn.jsdelivr.net/gh/stdlib-js/string-left-pad@deno/mod.js';
-import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@v0.2.3-deno/mod.js';
+import broadcastShapes from 'https://cdn.jsdelivr.net/gh/stdlib-js/ndarray-base-broadcast-shapes@deno/mod.js';
 
 var shapes;
 var out;
