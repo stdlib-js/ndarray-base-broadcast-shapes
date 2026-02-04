@@ -1,6 +1,6 @@
 {
   "name": "@stdlib/ndarray-base-broadcast-shapes",
-  "version": "0.2.2",
+  "version": "0.2.3",
   "description": "Broadcast array shapes to a single shape.",
   "license": "Apache-2.0",
   "author": {
