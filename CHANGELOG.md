@@ -2,6 +2,40 @@
 
 > Package changelog.
 
+<section class="release" id="unreleased">
+
+## Unreleased (2026-04-08)
+
+<section class="commits">
+
+### Commits
+
+<details>
+
+-   [`da18a82`](https://github.com/stdlib-js/stdlib/commit/da18a821cb5b0e559658144a92a9fc1876d7345e) - **style:** reorder declarations _(by Athan Reines)_
+
+</details>
+
+</section>
+
+<!-- /.commits -->
+
+<section class="contributors">
+
+### Contributors
+
+A total of 1 person contributed to this release. Thank you to this contributor:
+
+-   Athan Reines
+
+</section>
+
+<!-- /.contributors -->
+
+</section>
+
+<!-- /.release -->
+
 <section class="release" id="v0.2.3">
 
 ## 0.2.3 (2026-02-04)
